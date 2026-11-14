@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | SOLTERRA Gated Plot Communities</title>
+  <meta name="description" content="Explore SOLTERRA residential gated plot developments, filter by project status, inspect master plans, and schedule a site visit." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class' };</script>
+  <script src="assets/js/theme.js"></script>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body class="antialiased">
+  <div id="global-header"></div>
+
+  <main class="pt-20">
+    <!-- SECTION 1: PROJECTS HERO -->
+    <section class="relative py-24 sm:py-32 overflow-hidden">
+      <div class="absolute inset-0">
+        <img src="https://images.unsplash.com/photo-1703726071784-9f24d9d745b3?auto=format&fit=crop&w=1920&q=80"
+             alt="Tree-lined estate avenue at Solterra" class="w-full h-full object-cover animate-hero-zoom" />
+        <div class="absolute inset-0 bg-[#121210]/70"></div>
+      </div>
+      <div class="relative z-10 max-w-5xl mx-auto px-5 sm:px-8 text-white text-center space-y-4">
+        <nav aria-label="Breadcrumb" class="text-xs uppercase tracking-[0.2em] text-stone-300 flex items-center justify-center gap-2 text-reveal">
+          <a href="index.html" class="hover:text-[#D4AF63]">Home</a>
+          <span>/</span>
+          <span class="text-[#D4AF63]">Projects</span>
+        </nav>
+        <h1 class="font-serif-display text-4xl sm:text-6xl font-semibold leading-tight text-reveal">
+          Discover Your Ideal Plot.
+        </h1>
+        <p class="text-stone-200 max-w-xl mx-auto text-sm sm:text-base text-reveal">
+          Browse our portfolio of upcoming, ongoing, ready-to-register, and completed gated residential enclaves.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION 2: ALL PROJECTS -->
+    <section id="all-projects" class="py-16 lg:py-24 surface-primary">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10" data-aos="fade-up">
+          <div>
+            <p class="text-xs uppercase tracking-[0.25em] text-gold font-semibold mb-2">Curated Portfolio</p>
+            <h2 class="font-serif-display text-3xl sm:text-5xl font-semibold">All Plot Developments</h2>
+          </div>
+          <p id="projects-count-label" class="text-sm text-muted-custom">Showing 6 of 6 Developments</p>
+        </div>
+
+        <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Populated dynamically from SOLTERRA_DATA.projects -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: PROJECT CATEGORIES (Creative Filters & Transitions) -->
+    <section class="py-16 lg:py-20 surface-secondary border-y border-theme">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-10" data-aos="fade-up">
+          <p class="text-xs uppercase tracking-[0.25em] text-gold font-semibold mb-2">Filter By Stage</p>
+          <h2 class="font-serif-display text-3xl sm:text-4xl font-semibold">Project Categories</h2>
+          <p class="text-xs sm:text-sm text-muted-custom mt-2">Select a development stage below to filter the project catalog above.</p>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-center gap-3" data-aos="zoom-in">
+          <button type="button" data-filter="all" class="project-filter-btn px-6 py-3 rounded-full text-sm font-semibold transition-all bg-[var(--accent-gold)] text-[#141311]">
+            All Projects
+          </button>
+          <button type="button" data-filter="upcoming" class="project-filter-btn px-6 py-3 rounded-full text-sm font-semibold transition-all surface-elevated hover:border-[var(--accent-gold)]">
+            Upcoming Projects
+          </button>
+          <button type="button" data-filter="ongoing" class="project-filter-btn px-6 py-3 rounded-full text-sm font-semibold transition-all surface-elevated hover:border-[var(--accent-gold)]">
+            Ongoing Projects
+          </button>
+          <button type="button" data-filter="ready" class="project-filter-btn px-6 py-3 rounded-full text-sm font-semibold transition-all surface-elevated hover:border-[var(--accent-gold)]">
+            Ready-to-Register Plots
+          </button>
+          <button type="button" data-filter="completed" class="project-filter-btn px-6 py-3 rounded-full text-sm font-semibold transition-all surface-elevated hover:border-[var(--accent-gold)]">
+            Completed Projects
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: PROJECT DETAILS & MASTER PLANS -->
+    <section id="masterplans" class="py-20 lg:py-28 surface-primary">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10" data-aos="fade-up">
+          <div>
+            <p class="text-xs uppercase tracking-[0.25em] text-gold font-semibold mb-2">In-Depth Dossier</p>
+            <h2 class="font-serif-display text-3xl sm:text-5xl font-semibold">Project Details &amp; Master Plans</h2>
+          </div>
+          <div class="flex flex-wrap gap-2" id="spotlight-tabs">
+            <!-- Populated dynamically -->
+          </div>
+        </div>
+
+        <div id="project-spotlight" class="surface-elevated rounded-3xl p-6 sm:p-10" data-aos="fade-up">
+          <!-- Populated dynamically when user clicks View Details or a tab -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: SCHEDULE YOUR SITE VISIT -->
+    <section class="py-20 lg:py-28 surface-secondary">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-10 items-stretch">
+          <div class="lg:col-span-5 flex flex-col justify-between gap-5" data-aos="fade-right">
+            <div class="space-y-4">
+              <p class="text-xs uppercase tracking-[0.25em] text-gold font-semibold">Private Tour</p>
+              <h2 class="font-serif-display text-3xl sm:text-5xl font-semibold leading-tight">Schedule Your Site Visit</h2>
+              <p class="text-sm sm:text-base text-muted-custom">
+                Walk the avenues, inspect boundary demarcations, and review legal dossiers in person with our estate advisors.
+              </p>
+            </div>
+            <div class="rounded-3xl overflow-hidden shadow-xl h-64 sm:h-72">
+              <img src="https://images.unsplash.com/photo-1725105530483-949042a57906?auto=format&fit=crop&w=1200&q=80"
+                   alt="Lush green estate fairway and landscaped grounds" class="w-full h-full object-cover" loading="lazy" />
+            </div>
+          </div>
+
+          <div class="lg:col-span-7 flex" data-aos="fade-left">
+            <form id="projects-visit-form" class="surface-elevated rounded-3xl p-6 sm:p-8 w-full flex flex-col justify-between gap-5" novalidate>
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="pv-name" class="block text-xs font-semibold uppercase tracking-wider mb-1.5">Full Name *</label>
+                  <input id="pv-name" name="name" type="text" required placeholder="Arjun Mehta" class="luxury-input" />
+                </div>
+                <div>
+                  <label for="pv-phone" class="block text-xs font-semibold uppercase tracking-wider mb-1.5">Phone Number *</label>
+                  <input id="pv-phone" name="phone" type="tel" required placeholder="+91 98765 43210" class="luxury-input" />
+                </div>
+              </div>
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="pv-email" class="block text-xs font-semibold uppercase tracking-wider mb-1.5">Email Address *</label>
+                  <input id="pv-email" name="email" type="email" required placeholder="arjun@example.com" class="luxury-input" />
+                </div>
+                <div>
+                  <label for="pv-project" class="block text-xs font-semibold uppercase tracking-wider mb-1.5">Preferred Project *</label>
+                  <select id="pv-project" name="project" required class="luxury-input">
+                    <option value="">Select a development</option>
+                    <option value="Solterra Meadows">Solterra Meadows</option>
+                    <option value="Solterra Crestwood">Solterra Crestwood</option>
+                    <option value="Solterra Olive Grove">Solterra Olive Grove</option>
+                    <option value="Solterra Highlands">Solterra Highlands</option>
+                    <option value="Solterra Veranda">Solterra Veranda</option>
+                  </select>
+                </div>
+              </div>
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="pv-date" class="block text-xs font-semibold uppercase tracking-wider mb-1.5">Preferred Visit Date *</label>
+                  <input id="pv-date" name="date" type="date" required class="luxury-input" />
+                </div>
+                <div>
+                  <label for="pv-message" class="block text-xs font-semibold uppercase tracking-wider mb-1.5">Message / Plot Preference</label>
+                  <input id="pv-message" name="message" type="text" placeholder="e.g. East-facing 40x60 corner plot" class="luxury-input" />
+                </div>
+              </div>
+              <button type="submit" class="btn-gold w-full sm:w-auto">Request Site Visit</button>
+              <div id="projects-visit-feedback" class="hidden" role="status"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="global-footer"></div>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const projects = window.SOLTERRA_DATA.projects;
+      const grid = document.getElementById('projects-grid');
+      const countLabel = document.getElementById('projects-count-label');
+      const spotlight = document.getElementById('project-spotlight');
+      const spotlightTabs = document.getElementById('spotlight-tabs');
+      const filterBtns = document.querySelectorAll('.project-filter-btn');
+
+      function statusBadgeClass(status) {
+        if (status === 'Available') return 'bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border-emerald-500/30';
+        if (status === 'Upcoming') return 'bg-amber-500/15 text-amber-700 dark:text-amber-300 border-amber-500/30';
+        return 'bg-stone-500/15 text-stone-600 dark:text-stone-300 border-stone-500/30';
+      }
+
+      function renderGrid(filter) {
+        const list = filter === 'all' ? projects : projects.filter(p => p.category === filter);
+        countLabel.textContent = `Showing ${list.length} of ${projects.length} Developments`;
+        grid.innerHTML = list.map((p, idx) => `
+          <article class="group surface-elevated rounded-3xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5" data-aos="fade-up" data-aos-delay="${idx * 60}">
+            <div>
+              <div class="img-zoom-wrap h-60 relative">
+                <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover" loading="lazy" />
+                <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold border backdrop-blur-md bg-black/55 text-white border-white/20">${p.categoryLabel}</span>
+                <span class="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-semibold border ${statusBadgeClass(p.status)} bg-white/90 dark:bg-[#1C1B19]/90">${p.status}</span>
+              </div>
+              <div class="p-6 space-y-3">
+                <p class="text-[11px] uppercase tracking-[0.18em] text-gold font-semibold">${p.location}</p>
+                <h3 class="font-serif-display text-2xl font-semibold">${p.name}</h3>
+                <p class="text-xs text-muted-custom leading-relaxed">${p.summary}</p>
+                <div class="grid grid-cols-2 gap-3 pt-3 border-t border-theme text-xs">
+                  <div>
+                    <span class="text-muted-custom block">Total Land Area</span>
+                    <span class="font-semibold">${p.totalArea}</span>
+                  </div>
+                  <div>
+                    <span class="text-muted-custom block">Plot Dimensions</span>
+                    <span class="font-semibold">${p.plotDimensions}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="px-6 pb-6 pt-3 border-t border-theme flex items-center justify-between">
+              <div>
+                <span class="text-[11px] text-muted-custom block">Starting Price</span>
+                <span class="font-serif-display text-xl font-bold text-gold">${p.startingPrice}</span>
+              </div>
+              <button type="button" onclick="window.selectSpotlightProject('${p.id}')" class="btn-outline-luxury btn-sm">
+                View Details
+              </button>
+            </div>
+          </article>
+        `).join('');
+      }
+
+      window.selectSpotlightProject = function (projectId, scroll = true) {
+        const p = projects.find(item => item.id === projectId) || projects[0];
+        spotlightTabs.innerHTML = projects.map(item => `
+          <button type="button" onclick="window.selectSpotlightProject('${item.id}', false)"
+            class="px-3.5 py-1.5 rounded-full text-xs font-semibold transition-colors ${item.id === p.id ? 'bg-[var(--accent-gold)] text-[#141311]' : 'surface-secondary hover:border-[var(--accent-gold)] border border-theme'}">
+            ${item.name.replace('Solterra ', '')}
+          </button>
+        `).join('');
+
+        spotlight.innerHTML = `
+          <div class="grid lg:grid-cols-12 gap-8 items-start">
+            <div class="lg:col-span-6 space-y-4">
+              <div class="img-zoom-wrap rounded-2xl overflow-hidden h-64 sm:h-80">
+                <img src="${p.gallery[0]}" alt="${p.name} master plan view" class="w-full h-full object-cover" />
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 items-stretch">
+                <div class="img-zoom-wrap rounded-2xl overflow-hidden h-44 sm:h-full sm:min-h-[144px]">
+                  <img src="${p.gallery[1]}" alt="${p.name} landscape" class="w-full h-full object-cover" />
+                </div>
+                <div class="p-4 rounded-2xl surface-secondary border border-theme flex flex-col justify-center">
+                  <span class="text-[11px] uppercase tracking-[0.2em] text-gold font-semibold">Master Plan Spec</span>
+                  <p class="font-serif-display text-xl font-semibold mt-1">${p.totalArea} Contoured Layout</p>
+                  <p class="text-xs text-muted-custom mt-1">${p.plotDimensions}</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="lg:col-span-6 space-y-6">
+              <div>
+                <div class="flex flex-wrap items-center gap-3 mb-2">
+                  <span class="text-xs uppercase tracking-[0.2em] text-gold font-semibold">${p.location}</span>
+                  <span class="px-3 py-0.5 rounded-full text-xs font-semibold border ${statusBadgeClass(p.status)}">${p.status}</span>
+                </div>
+                <h3 class="font-serif-display text-3xl sm:text-4xl font-semibold">${p.name}</h3>
+                <p class="text-sm text-muted-custom mt-2">${p.summary}</p>
+              </div>
+
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div class="p-4 rounded-2xl surface-secondary border border-theme">
+                  <h4 class="text-xs uppercase tracking-[0.18em] text-olive font-semibold mb-2">Existing / Ready Amenities</h4>
+                  <ul class="space-y-1.5 text-xs text-muted-custom">
+                    ${p.existingAmenities.map(a => `<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>${a}</li>`).join('')}
+                  </ul>
+                </div>
+                <div class="p-4 rounded-2xl surface-secondary border border-theme">
+                  <h4 class="text-xs uppercase tracking-[0.18em] text-gold font-semibold mb-2">Proposed / Upcoming</h4>
+                  <ul class="space-y-1.5 text-xs text-muted-custom">
+                    ${p.proposedAmenities.map(a => `<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>${a}</li>`).join('')}
+                  </ul>
+                </div>
+              </div>
+
+              <div class="p-4 rounded-2xl surface-secondary border border-theme flex flex-wrap items-center justify-between gap-4">
+                <div>
+                  <span class="text-xs text-muted-custom block">Indicative Starting Price</span>
+                  <span class="font-serif-display text-2xl font-bold text-gold">${p.startingPrice}</span>
+                </div>
+                <a href="contact.html#site-visit" class="btn-gold">Enquire Now</a>
+              </div>
+            </div>
+          </div>
+        `;
+        if (scroll) {
+          document.getElementById('masterplans').scrollIntoView({ behavior: 'smooth' });
+        }
+      };
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => {
+            b.className = 'project-filter-btn px-6 py-3 rounded-full text-sm font-semibold transition-all surface-elevated hover:border-[var(--accent-gold)]';
+          });
+          btn.className = 'project-filter-btn px-6 py-3 rounded-full text-sm font-semibold transition-all bg-[var(--accent-gold)] text-[#141311]';
+          renderGrid(btn.getAttribute('data-filter'));
+          document.getElementById('all-projects').scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+
+      renderGrid('all');
+      window.selectSpotlightProject(projects[0].id, false);
+      window.SolterraBindForm('projects-visit-form', 'projects-visit-feedback', 'visit');
+    });
+  </script>
+</body>
+</html>
+

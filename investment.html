@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Land Investment &amp; Legal Guide | SOLTERRA Landmark Estates</title>
+  <meta name="description" content="Explore SOLTERRA's land appreciation estimator, 40-year RERA legal checklist, payment milestones, and NRI investment advisory." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class' };</script>
+  <script src="assets/js/theme.js"></script>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body class="antialiased">
+  <div id="global-header"></div>
+
+  <main class="pt-20">
+    <!-- SECTION 1: INVESTMENT HERO -->
+    <section class="relative py-24 sm:py-32 overflow-hidden">
+      <div class="absolute inset-0">
+        <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1920&q=80"
+             alt="Contemporary architectural landmark representing Solterra investments" class="w-full h-full object-cover animate-hero-zoom" />
+        <div class="absolute inset-0 bg-[#121210]/75"></div>
+      </div>
+      <div class="relative z-10 max-w-5xl mx-auto px-5 sm:px-8 text-white text-center space-y-4">
+        <nav aria-label="Breadcrumb" class="text-xs uppercase tracking-[0.2em] text-stone-300 flex items-center justify-center gap-2 text-reveal">
+          <a href="index.html" class="hover:text-[#D4AF63]">Home</a>
+          <span>/</span>
+          <span class="text-[#D4AF63]">Investment Guide</span>
+        </nav>
+        <h1 class="font-serif-display text-4xl sm:text-5xl lg:text-6xl font-semibold max-w-4xl mx-auto leading-tight text-reveal">
+          Sovereign Land. <span class="italic text-[#D4AF63]">Generational Wealth.</span>
+        </h1>
+        <p class="text-stone-200 max-w-2xl mx-auto text-sm sm:text-base text-reveal">
+          A transparent framework for evaluating plotted real estate—covering corridor appreciation, 40-year legal due diligence, bank empanelment, and NRI acquisition.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION 2: INTERACTIVE LAND APPRECIATION & ROI ESTIMATOR -->
+    <section class="py-20 lg:py-28 surface-primary">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-5 space-y-5" data-aos="fade-right">
+            <p class="text-xs uppercase tracking-[0.25em] text-gold font-semibold">Portfolio Modeling</p>
+            <h2 class="font-serif-display text-3xl sm:text-5xl font-semibold leading-tight">Land Appreciation Estimator</h2>
+            <p class="text-sm sm:text-base text-muted-custom leading-relaxed">
+              Model indicative long-term equity growth across our high-growth corridors. Adjust plot area, holding horizon, and historical corridor CAGR to preview potential asset value.
+            </p>
+            <div class="p-4 rounded-2xl surface-secondary border border-theme text-xs text-muted-custom">
+              <strong class="text-gold">Advisory Note:</strong> Projections are illustrative scenarios based on historical infrastructure-led appreciation and are not guaranteed financial returns.
+            </div>
+          </div>
+
+          <div class="lg:col-span-7" data-aos="fade-left">
+            <div class="surface-elevated rounded-3xl p-6 sm:p-8 space-y-6">
+              <div class="grid sm:grid-cols-3 gap-4">
+                <div>
+                  <label for="roi-budget" class="block text-xs font-semibold uppercase tracking-wider mb-1.5">Initial Plot Value</label>
+                  <select id="roi-budget" class="luxury-input">
+                    <option value="118000">$118,000 (1,200 sq.ft)</option>
+                    <option value="145000" selected>$145,000 (1,800 sq.ft)</option>
+                    <option value="178000">$178,000 (2,400 sq.ft)</option>
+                    <option value="248000">$248,000 (3,600 sq.ft)</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="roi-years" class="block text-xs font-semibold uppercase tracking-wider mb-1.5">Holding Horizon</label>
+                  <select id="roi-years" class="luxury-input">
+                    <option value="3">3 Years</option>
+                    <option value="5" selected>5 Years</option>
+                    <option value="8">8 Years</option>
+                    <option value="10">10 Years</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="roi-rate" class="block text-xs font-semibold uppercase tracking-wider mb-1.5">Annual Growth (CAGR)</label>
+                  <select id="roi-rate" class="luxury-input">
+                    <option value="0.09">9% Conservative</option>
+                    <option value="0.12" selected>12% Corridor Avg.</option>
+                    <option value="0.15">15% High-Growth Node</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-theme">
+                <div class="p-4 rounded-2xl surface-secondary border border-theme">
+                  <p class="text-xs text-muted-custom">Projected Value</p>
+                  <p id="roi-projected" class="font-serif-display text-3xl font-bold text-gold mt-1">$255,540</p>
+                </div>
+                <div class="p-4 rounded-2xl surface-secondary border border-theme">
+                  <p class="text-xs text-muted-custom">Estimated Gain</p>
+                  <p id="roi-gain" class="font-serif-display text-3xl font-bold text-olive mt-1">+$110,540</p>
+                </div>
+                <div class="p-4 rounded-2xl surface-secondary border border-theme">
+                  <p class="text-xs text-muted-custom">Total Growth</p>
+                  <p id="roi-percent" class="font-serif-display text-3xl font-bold mt-1">+76%</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: 40-YEAR LEGAL & RERA VERIFICATION CHECKLIST -->
+    <section class="py-20 lg:py-28 surface-secondary">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-6 reveal-mask rounded-3xl overflow-hidden shadow-2xl h-80 sm:h-[460px]">
+            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80"
+                 alt="Architects and legal planners reviewing master layout blueprints" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+
+          <div class="lg:col-span-6 space-y-6" data-aos="fade-left">
+            <p class="text-xs uppercase tracking-[0.25em] text-gold font-semibold">Zero-Litigation Guarantee</p>
+            <h2 class="font-serif-display text-3xl sm:text-5xl font-semibold leading-tight">6-Point Legal Verification</h2>
+            <p class="text-sm sm:text-base text-muted-custom">
+              Every Solterra plot comes with a digitally indexed legal dossier audited by independent real estate counsels prior to launch.
+            </p>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div class="surface-elevated rounded-2xl p-4 space-y-1">
+                <h3 class="font-semibold text-sm text-gold">01. Mother Deed Trace</h3>
+                <p class="text-xs text-muted-custom">Unbroken 40-year ownership chain verified across revenue records.</p>
+              </div>
+              <div class="surface-elevated rounded-2xl p-4 space-y-1">
+                <h3 class="font-semibold text-sm text-gold">02. RERA Registration</h3>
+                <p class="text-xs text-muted-custom">Full state RERA approval with quarterly milestone disclosures.</p>
+              </div>
+              <div class="surface-elevated rounded-2xl p-4 space-y-1">
+                <h3 class="font-semibold text-sm text-gold">03. DC Land Conversion</h3>
+                <p class="text-xs text-muted-custom">Non-agricultural residential conversion orders duly gazetted.</p>
+              </div>
+              <div class="surface-elevated rounded-2xl p-4 space-y-1">
+                <h3 class="font-semibold text-sm text-gold">04. Encumbrance (EC)</h3>
+                <p class="text-xs text-muted-custom">Nil-encumbrance certificate confirming zero liens or mortgages.</p>
+              </div>
+              <div class="surface-elevated rounded-2xl p-4 space-y-1">
+                <h3 class="font-semibold text-sm text-gold">05. Layout Sanction</h3>
+                <p class="text-xs text-muted-custom">Planning authority approval for roads, parks, and civic areas.</p>
+              </div>
+              <div class="surface-elevated rounded-2xl p-4 space-y-1">
+                <h3 class="font-semibold text-sm text-gold">06. Individual E-Khata</h3>
+                <p class="text-xs text-muted-custom">Clean parcel-level tax assessment ready for immediate registration.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: FINANCING, PAYMENT MILESTONES & NRI DESK -->
+    <section class="py-20 lg:py-28 surface-primary">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-7 space-y-8" data-aos="fade-up">
+            <div>
+              <p class="text-xs uppercase tracking-[0.25em] text-gold font-semibold mb-2">Structured Acquisition</p>
+              <h2 class="font-serif-display text-3xl sm:text-5xl font-semibold">Payment Milestones &amp; NRI Desk</h2>
+              <p class="text-sm sm:text-base text-muted-custom mt-3">
+                Transparent, milestone-linked disbursements with pre-approved plot loans from leading nationalized and private banks.
+              </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div class="p-5 rounded-2xl surface-secondary border border-theme">
+                <span class="text-xs font-bold text-gold">STAGE 01 &bull; 10%</span>
+                <h3 class="font-serif-display text-xl font-semibold mt-1">Plot Reservation</h3>
+                <p class="text-xs text-muted-custom mt-1">Lock your chosen parcel and receive the complete digital legal kit.</p>
+              </div>
+              <div class="p-5 rounded-2xl surface-secondary border border-theme">
+                <span class="text-xs font-bold text-gold">STAGE 02 &bull; 20%</span>
+                <h3 class="font-serif-display text-xl font-semibold mt-1">Sale Agreement</h3>
+                <p class="text-xs text-muted-custom mt-1">Executed within 15 days after your independent lawyer’s sign-off.</p>
+              </div>
+              <div class="p-5 rounded-2xl surface-secondary border border-theme">
+                <span class="text-xs font-bold text-gold">STAGE 03 &bull; 50%</span>
+                <h3 class="font-serif-display text-xl font-semibold mt-1">Infra &amp; Bank Disbursal</h3>
+                <p class="text-xs text-muted-custom mt-1">Linked to road laying, underground utilities, and boundary stones.</p>
+              </div>
+              <div class="p-5 rounded-2xl surface-secondary border border-theme">
+                <span class="text-xs font-bold text-gold">STAGE 04 &bull; 20%</span>
+                <h3 class="font-serif-display text-xl font-semibold mt-1">Registration &amp; Handover</h3>
+                <p class="text-xs text-muted-custom mt-1">Final Sale Deed registration and resident guild membership.</p>
+              </div>
+            </div>
+
+            <div class="surface-elevated rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div>
+                <h3 class="font-semibold text-sm">Dedicated NRI &amp; OCI Desk</h3>
+                <p class="text-xs text-muted-custom">FEMA-compliant NRE/NRO remittance support and Power of Attorney coordination.</p>
+              </div>
+              <a href="contact.html" class="btn-outline-luxury btn-sm shrink-0">Connect With NRI Desk</a>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 img-zoom-wrap rounded-3xl overflow-hidden shadow-2xl h-80 sm:h-[490px]" data-aos="zoom-in">
+            <img src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4?auto=format&fit=crop&w=1200&q=80"
+                 alt="Modern private advisory lounge interior" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: REQUEST LEGAL DOSSIER & ADVISORY CTA -->
+    <section class="relative py-28 lg:py-36 overflow-hidden">
+      <div class="absolute inset-0">
+        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80"
+             alt="Architectural glass facade of Solterra advisory tower" data-parallax="0.14" class="w-full h-full object-cover" loading="lazy" />
+        <div class="absolute inset-0 bg-[#121210]/75"></div>
+      </div>
+      <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center text-white space-y-6" data-aos="fade-up">
+        <p class="text-xs uppercase tracking-[0.28em] text-[#D4AF63] font-semibold">Institutional Clarity</p>
+        <h2 class="font-serif-display text-4xl sm:text-6xl font-semibold leading-tight">
+          Invest With Complete Legal Confidence.
+        </h2>
+        <p class="text-stone-200 max-w-xl mx-auto text-sm sm:text-base">
+          Request sample Sale Agreements, RERA certificates, and plot availability sheets directly from our legal advisory team.
+        </p>
+        <div class="cta-group justify-center pt-3">
+          <a href="contact.html" class="btn-gold">Request Legal Dossier</a>
+          <a href="contact.html#site-visit" class="btn-outline-light">Book a Site Visit</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="global-footer"></div>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const budgetEl = document.getElementById('roi-budget');
+      const yearsEl = document.getElementById('roi-years');
+      const rateEl = document.getElementById('roi-rate');
+      const projEl = document.getElementById('roi-projected');
+      const gainEl = document.getElementById('roi-gain');
+      const pctEl = document.getElementById('roi-percent');
+
+      function updateROI() {
+        const principal = parseFloat(budgetEl.value);
+        const years = parseInt(yearsEl.value, 10);
+        const rate = parseFloat(rateEl.value);
+        const projected = Math.round(principal * Math.pow(1 + rate, years));
+        const gain = projected - principal;
+        const pct = Math.round((gain / principal) * 100);
+        projEl.textContent = '$' + projected.toLocaleString();
+        gainEl.textContent = '+$' + gain.toLocaleString();
+        pctEl.textContent = '+' + pct + '%';
+      }
+
+      [budgetEl, yearsEl, rateEl].forEach(el => el.addEventListener('change', updateROI));
+      updateROI();
+    });
+  </script>
+</body>
+</html>
