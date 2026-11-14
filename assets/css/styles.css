@@ -373,6 +373,13 @@ body {
   border-color: var(--accent-gold);
   box-shadow: 0 0 0 3px var(--accent-gold-soft);
 }
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+}
+html.dark input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.92);
+  opacity: 0.9;
+}
 
 /* Interactive Masterplan Plot Cell */
 .plot-cell {

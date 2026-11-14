@@ -51,7 +51,6 @@
               <a href="amenities.html" class="py-2 transition-colors ${isActive('amenities.html')}">Amenities</a>
               <a href="investment.html" class="py-2 transition-colors ${isActive('investment.html')}">Invest</a>
               <a href="contact.html" class="py-2 transition-colors ${isActive('contact.html')}">Contact</a>
-              <a href="signup.html" class="py-2 transition-colors hover:text-gold">Signup</a>
             </nav>
 
             <!-- Right Actions (Desktop Only; Mobile/Tablet housed inside Hamburger Drawer) -->
@@ -99,7 +98,6 @@
               <a href="amenities.html" class="px-4 py-2.5 rounded-xl surface-secondary text-sm font-medium ${isActive('amenities.html')}">Amenities</a>
               <a href="investment.html" class="px-4 py-2.5 rounded-xl surface-secondary text-sm font-medium ${isActive('investment.html')}">Invest</a>
               <a href="contact.html" class="px-4 py-2.5 rounded-xl surface-secondary text-sm font-medium ${isActive('contact.html')}">Contact</a>
-              <a href="signup.html" class="px-4 py-2.5 rounded-xl surface-secondary text-sm font-medium">Signup</a>
             </div>
 
             <!-- Aligned Controls & CTA Inside Hamburger Drawer -->
@@ -200,7 +198,6 @@
                 <li><a href="about.html" class="hover:text-gold transition-colors">About Us</a></li>
                 <li><a href="investment.html" class="hover:text-gold transition-colors">Investment Guide</a></li>
                 <li><a href="contact.html" class="hover:text-gold transition-colors">Contact Us</a></li>
-                <li><a href="login.html" class="hover:text-gold transition-colors">Client Login</a></li>
               </ul>
             </div>
 
